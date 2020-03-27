@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Calculator // landonisonline</title>
+</head>
+<body>
+    <label>Square this number:
+        <input type="number" id="square-input" size="2">
+    </label>
+    <button id="square-button" onClick="squareNumber()">Calculate</button>
+    <br><br>
+
+    <label>Half this number:
+        <input type="number" id="half-input" size="2">
+    </label>
+    <button id="half-button" onclick="halfNumber()">Calculate</button>
+    <br><br>
+
+    <label>
+        Fraction:
+        <input type="number" id="percent1-input" size="2">
+    </label>
+    <label>
+        Whole:
+        <input type="number" id="percent2-input" size="2">
+    </label>
+    <button id="percent-button" onclick="percentOf()">Calculate</button>
+    <br><br>
+
+    <label>Calculate area of circle with radius:
+        <input type="number" id="area-input" size="2">
+    </label>
+    <button id="area-button" onclick="areaOfCircle()">Calculate</button>
+    <br><br>
+    
+    <div id="solution">Ready</div>
+
+    <script>
+
+        function squareNumber() {
+            var sNum = document.getElementById("square-input").value;
+            var ssNum = sNum * sNum;
+           document.getElementById("solution").innerHTML = `The result of squaring the number ${sNum} is ${ssNum}`;
+        }
+
+        function halfNumber() {
+            var hNum = document.getElementById("half-input").value;
+            hhNum = hNum / 2;
+            document.getElementById("solution").innerHTML = `Half of ${hNum} is ${hhNum}`;
+            
+        }
+
+        function percentOf() {
+        var pNumOne = document.getElementById("percent1-input").value;
+        var pNumTwo = document.getElementById("percent2-input").value;
+	        var pNumDiv = pNumOne / 100;
+            var pNumMul = pNumTwo * pNumDiv;
+            document.getElementById("solution").innerHTML = `${pNumMul} is ${pNumOne}% of ${pNumTwo}`;
+	        
+        }
+
+        function areaOfCircle() {
+          var r = document.getElementById("area-input").value;
+            var rTwo = Math.PI * r * r;
+            var rThree = (Math.round(Math.PI * r * r * 100) / 100);
+            document.getElementById("solution").innerHTML = `The area for a circle with a radius ${r} is ${rTwo} or ${rThree}`;
+            
+        }
+
+        /* No corresponding HTML code
+
+          function multiStep() {
+          var mNumOne = document.getElementById("").value;
+            var mNumTwo = mNumOne / mNumOne;
+            var mNumThree = mNumTwo * mNumTwo;
+            var mNumFour = (Math.round(Math.PI *mNumThree *mNumThree * 100) / 100);
+            var mNumFive = mNumFour / 100;
+            var mNumSix = 100 * mNumFive;
+            document.getElementById("solution").innerHTML = mNumSix;
+        }
+        */
+        
+
+    </script>
+
+
+    
+</body>
+
+</html>
